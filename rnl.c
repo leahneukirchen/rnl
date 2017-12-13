@@ -13,7 +13,7 @@ int
 main(int argc, char *argv[])
 {
 	int c;
-	int i, n = 0;
+	int i;
 	int mode = -1;
 	char nl = '\n';
 
@@ -37,6 +37,7 @@ main(int argc, char *argv[])
 
 	if (optind == argc) {
 		/* pipe mode stdin -> stdout */
+		off_t n = 0;
 
 		while ((c = getchar()) != EOF) {
 			if (c == nl) {
@@ -53,7 +54,7 @@ main(int argc, char *argv[])
 				putchar(nl);
 		else if (mode == -1 && n > 0)
 			putchar(nl);
-		/* else (mode == 0) ; do nothing */
+		/* else (mode == 0) ; noop */
 
 		return 0;
 	}

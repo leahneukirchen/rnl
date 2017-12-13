@@ -1,0 +1,53 @@
+.Dd December 13, 2017
+.Dt RNL 1
+.Os
+.Sh NAME
+.Nm rnl
+.Nd remove trailing newlines
+.Sh SYNOPSIS
+.Nm
+.Op Fl 01sz
+.Op Ar files\ ...
+.Sh DESCRIPTION
+.Nm
+removes trailing newlines from the specified input
+.Ar files .
+The files are modified in-place!
+.Pp
+When used without arguments,
+.Nm
+copies standard input to standard output,
+removing trailing newlines.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl 0
+Remove
+.Em all
+trailing newlines.
+.It Fl 1
+Remove just
+.Em one
+trailing newline.
+.It Fl s
+Strip all but one newline at the end.
+(This is the default.)
+.It Fl z
+Remove final NUL bytes instead of newlines.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Xr tr 1
+.Sh AUTHORS
+.An Leah Neukirchen Aq Mt leah@vuxu.org
+.Sh LICENSE
+.Nm
+is in the public domain.
+.Pp
+To the extent possible under law,
+the creator of this work
+has waived all copyright and related or
+neighboring rights to this work.
+.Pp
+.Lk http://creativecommons.org/publicdomain/zero/1.0/

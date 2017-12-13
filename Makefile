@@ -15,6 +15,9 @@ README: rnl.1
 clean: FRC
 	rm -f $(ALL)
 
+check: FRC all
+	prove -v
+
 install: FRC all
 	mkdir -p $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)/man1
 	install -m0755 $(ALL) $(DESTDIR)$(BINDIR)

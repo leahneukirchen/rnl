@@ -1,27 +1,27 @@
 RNL(1)                      General Commands Manual                     RNL(1)
 
 NAME
-     rnl – remove trailing newlines
+     rnl – remove final newlines
 
 SYNOPSIS
      rnl [-01sz] [files ...]
 
 DESCRIPTION
-     rnl removes trailing newlines from the specified input files.  The files
-     are modified in-place!
+     rnl removes final newlines from the specified input files.  The files are
+     modified in-place!
 
      When used without arguments, rnl copies standard input to standard
-     output, removing trailing newlines.
+     output, removing final newlines.
 
      The options are as follows:
 
-     -0      Remove all trailing newlines.
+     -0      Remove final NUL bytes instead of newlines.
 
-     -1      Remove just one trailing newline.
+     -a      Remove all final newlines.
 
      -s      Strip all but one newline at the end.  (This is the default.)
 
-     -z      Remove final NUL bytes instead of newlines.
+     -o      Remove just one final newline.
 
 EXIT STATUS
      The rnl utility exits 0 on success, and >0 if an error occurs.

@@ -3,37 +3,37 @@
 .Os
 .Sh NAME
 .Nm rnl
-.Nd remove trailing newlines
+.Nd remove final newlines
 .Sh SYNOPSIS
 .Nm
 .Op Fl 01sz
 .Op Ar files\ ...
 .Sh DESCRIPTION
 .Nm
-removes trailing newlines from the specified input
+removes final newlines from the specified input
 .Ar files .
 The files are modified in-place!
 .Pp
 When used without arguments,
 .Nm
 copies standard input to standard output,
-removing trailing newlines.
+removing final newlines.
 .Pp
 The options are as follows:
 .Bl -tag -width Ds
 .It Fl 0
+Remove final NUL bytes instead of newlines.
+.It Fl a
 Remove
 .Em all
-trailing newlines.
-.It Fl 1
-Remove just
-.Em one
-trailing newline.
+final newlines.
 .It Fl s
 Strip all but one newline at the end.
 (This is the default.)
-.It Fl z
-Remove final NUL bytes instead of newlines.
+.It Fl o
+Remove just
+.Em one
+final newline.
 .El
 .Sh EXIT STATUS
 .Ex -std

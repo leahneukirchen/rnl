@@ -17,20 +17,20 @@ main(int argc, char *argv[])
 	int mode = -1;
 	char nl = '\n';
 
-	while ((c = getopt(argc, argv, "01sz")) != -1)
+	while ((c = getopt(argc, argv, "0aso")) != -1)
 		switch (c) {
-		case '0': mode = 0; break;
-		case '1': mode = 1; break;
+		case '0': nl = '\0'; break;
+		case 'a': mode = 0; break;
 		case 's': mode = -1; break;
-		case 'z': nl = '\0'; break;
+		case 'o': mode = 1; break;
 		default:
 			fprintf(stderr,
-"Usage: %s [-01sz] < INPUT           writes to stdout\n"
-"       %s [-01sz] INPUT...          modifies in-place!\n"
-"  -0  strip all newlines at end\n"
-"  -1  strip one newline at end\n"
+"Usage: %s [-0aso] < INPUT           writes to stdout\n"
+"       %s [-0aso] INPUT...          modifies files in-place!\n"
+"  -0  strip NUL bytes instead of newlines\n"
+"  -a  strip all newlines at end\n"
 "  -s  default: strip all but one newline at end\n"
-"  -z  strip NUL bytes instead of newlines\n",
+"  -o  strip one newline at end\n",
 			    argv[0], argv[0]);
 			exit(1);
 		}
